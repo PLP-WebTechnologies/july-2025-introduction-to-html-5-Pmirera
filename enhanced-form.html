@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Demo page showing advanced HTML5 content elements and a fully validated form." />
+  <meta name="author" content="Your Name" />
+  <title>HTML5 Content & Form Demo</title>
+</head>
+<body>
+
+  <header>
+    <h1>Enhancing HTML5 Content & Mastering Forms</h1>
+    <p>A quick showcase of lists, tables, media, and native form validation.</p>
+  </header>
+
+  <main>
+
+    <!-- Content Showcase -->
+    <section id="content" aria-labelledby="content-heading">
+      <h2 id="content-heading">Content Elements</h2>
+
+      <!-- Lists -->
+      <article>
+        <h3>Ordered &amp; Unordered Lists</h3>
+
+        <h4>Top 3 Accessibility Practices</h4>
+        <ol>
+          <li>Use semantic headings.</li>
+          <li>Provide text alternatives.</li>
+          <li>Ensure sufficient contrast.</li>
+        </ol>
+
+        <h4>Common HTML5 Landmarks</h4>
+        <ul>
+          <li>&lt;header&gt;</li>
+          <li>&lt;nav&gt;</li>
+          <li>&lt;main&gt;</li>
+          <li>&lt;section&gt;</li>
+          <li>&lt;footer&gt;</li>
+        </ul>
+      </article>
+
+      <!-- Table -->
+      <article>
+        <h3>Data Table</h3>
+        <table>
+          <caption>HTML5 Media Element Support (July 2025)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Element</th>
+              <th scope="col">Chrome</th>
+              <th scope="col">Firefox</th>
+              <th scope="col">Safari</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">&lt;audio&gt;</th><td>✔</td><td>✔</td><td>✔</td></tr>
+            <tr><th scope="row">&lt;video&gt;</th><td>✔</td><td>✔</td><td>✔</td></tr>
+            <tr><th scope="row">&lt;picture&gt;</th><td>✔</td><td>✔</td><td>✔</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <!-- Media -->
+      <article>
+        <h3>Embedded Media</h3>
+
+        <figure>
+          <img src="https://via.placeholder.com/600x300" alt="Abstract colorful shapes" width="600" height="300">
+          <figcaption>Figure 1: Placeholder image demonstrating responsive embedding.</figcaption>
+        </figure>
+
+        <figure>
+          <figcaption>Figure 2: Short demo video (no audio)</figcaption>
+          <video controls width="600">
+            <source src="video-demo.mp4" type="video/mp4">
+            Your browser does not support the <code>video</code> tag.
+          </video>
+        </figure>
+      </article>
+    </section>
+
+    <!-- Registration Form -->
+    <section id="registration" aria-labelledby="form-heading">
+      <h2 id="form-heading">Conference Registration Form</h2>
+      <p>Fields marked with <strong>*</strong> are required.</p>
+
+      <form action="#" method="post" autocomplete="on">
+
+        <!-- Personal Info -->
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label for="confid">Conference ID</label>
+          <input type="text" id="confid" name="confid" value="CONF2025" readonly>
+
+          <label for="fname">First Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="fname" name="fname" required minlength="2" autocomplete="given-name">
+
+          <label for="lname">Last Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="lname" name="lname" required minlength="2" autocomplete="family-name">
+
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="0712345678" autocomplete="tel-national">
+
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" max="2007-12-31">
+        </fieldset>
+
+        <!-- Preferences -->
+        <fieldset>
+          <legend>Session Preferences</legend>
+
+          <label for="track">Preferred Track</label>
+          <select id="track" name="track">
+            <option value="front-end">Front-End</option>
+            <option value="back-end">Back-End</option>
+            <option value="full-stack">Full-Stack</option>
+          </select>
+
+          <p>Meal Preference <span aria-hidden="true">*</span></p>
+          <label><input type="radio" name="meal" value="regular" required> Regular</label>
+          <label><input type="radio" name="meal" value="vegetarian"> Vegetarian</label>
+          <label><input type="radio" name="meal" value="vegan"> Vegan</label>
+
+          <label for="tshirt">T-Shirt Size</label>
+          <select id="tshirt" name="tshirt" required>
+            <option value="">Select size</option>
+            <option value="s">Small</option>
+            <option value="m">Medium</option>
+            <option value="l">Large</option>
+            <option value="xl">XL</option>
+          </select>
+        </fieldset>
+
+        <!-- Extras -->
+        <fieldset>
+          <legend>Additional Options</legend>
+
+          <label for="website">Portfolio URL</label>
+          <input type="url" id="website" name="website" placeholder="https://example.com">
+
+          <label for="color">Favorite Color</label>
+          <input type="color" id="color" name="color" value="#009688">
+
+          <label for="experience">Coding Experience (0–10 years)</label>
+          <input type="range" id="experience" name="experience" min="0" max="10" value="2" step="1">
+
+          <label for="bio">Short Bio (max 150 chars)</label>
+          <textarea id="bio" name="bio" maxlength="150" rows="4" placeholder="Tell us about yourself"></textarea>
+
+          <label><input type="checkbox" name="subscribe" checked> Subscribe to newsletter</label>
+          <label><input type="checkbox" name="terms" required> I agree to the <a href="#">terms &amp; conditions</a> <span aria-hidden="true">*</span></label>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
